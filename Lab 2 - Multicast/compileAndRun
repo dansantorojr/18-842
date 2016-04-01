@@ -1,0 +1,1 @@
+javac -sourcepath src -d build src/**/*.java -classpath ./lib/snakeyaml-1.16.jar -Xlint && java -cp .:.:build:**/*.class:.:lib/snakeyaml-1.16.jar DistSystComm.Interface

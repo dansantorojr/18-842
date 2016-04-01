@@ -1,0 +1,43 @@
+# 18-842 Distributed Systems
+# Spring 2016
+# Lab 0: Communications Infrastructure
+# Interface.java
+# Daniel Santoro // ddsantor. Akansha Patel // akanshap.
+
+FILE STRUCTURE:
+In the absence of a defined file structure, we opted to put all source files,
+library files (for snakeyaml), configuration files, etc. in one directory, 
+'DistSystComm' (short for  Distributed Systems Communications).  Although this 
+may not be the best taste, it was the most efficient way to organize the files 
+and compile them. 
+
+COMPILATION:
+If running in a Unix type command line environment, there is a small bash script
+called "compileAndRun" in the DistSystComm directory. This will compile the
+project and start running it. Additionaly, in the same directory there is a 
+"run" script. This will just run the program without compiling.
+
+If running in a Windows environment, there is a "compileAndRunWindows.readme" file
+located in the DistSystComm directory. This is not a script, but does lay out the
+proper command line arguments to compile and subsequently run the program if the
+current directory is the DistSystComm directory.
+
+CONFIGURATION:
+The configuration file (config.yaml) is also placed in the DistSystComm directory.
+When interacting with the user interface you'll find that the program requests the
+name of the configuration file. A path can be accepted here so the configuration
+file can actually be placed anywhere as long as there is a file path to it.
+
+DEMO:
+Per the configuration discussion above, it is our intention to demo using 
+multiple CMU machines. That is, we intend to ssh into multiple machines on the 
+Andrew File System to demo this project. In doing this, we can place the config.yaml
+file in any Public folder on AFS so that all instances of MessagePasser can 
+read from the same file.
+
+FUTURE: 
+As described above, we used a file structure that was efficient but probably not
+considered very graceful. In the future, among other things, we plan to learn 
+more in this realm and improve in this area.
+
+

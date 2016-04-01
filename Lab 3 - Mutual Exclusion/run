@@ -1,0 +1,1 @@
+java -cp .:.:build:**/*.class:.:lib/snakeyaml-1.16.jar DistSystComm.Interface

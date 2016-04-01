@@ -1,0 +1,1 @@
+javac -d . ./*.java -classpath ./snakeyaml-1.16.jar && java -classpath .:snakeyaml-1.16.jar DistSystComm.Interface -v

@@ -1,0 +1,53 @@
+# Defines which nodes are used in the system and how to connect to them.
+# This element should only be referenced during the constructor's initial
+# setup.
+# All names must be unique.
+# No other nodes are known.
+# These names will be used for src and dest addresses for the Message
+# The local node’s name is included in this list
+groups:
+    - name : Group1
+      members:
+         - santoro
+         - danny
+         - akansha
+    - name : Group2
+      members:
+         - santoro
+         - danny
+         - patel
+    - name : Group3
+      members:
+         - akansha
+         - patel
+         - santoro
+configuration :
+    - name : akansha
+      ip : 172.17.64.30 
+      port : 14259 # This is the incoming port on which MP will listen
+                   # May be changed for further communication as usual
+    - name : patel
+      ip : 172.17.64.30 
+      port : 14255
+    - name : danny
+      ip : 172.17.64.30 
+      port : 15432
+    - name : santoro
+      ip : 172.17.64.30 
+      port : 1987
+    - name : logger
+      ip : 172.17.64.30 
+      port : 9999
+systemClockType : vector
+sendRules :
+    - action : drop # Ack message number 4 from bob to alice will not be sent
+      src : danny
+      dest : santoro
+    - action : drop # Daphnie will stop sending Reply messages after seq#6
+      kind : drop
+      src : danny
+receiveRules :
+    - action : drop  # Any message from charlie will be delivered
+      src : cloud9 # only after some other message is delivered
+      seqNum : 5
+    

@@ -1,0 +1,25 @@
+# 18-842 Distributed Systems
+# Spring 2016
+# Lab 3: Mutual Exclusion
+# FAULT.txt
+# Daniel Santoro // ddsantor. Akansha Patel // akanshap.
+
+Assumption #1: All processes are in a group. 
+If not all processes are in a group, then they cannot exclusively access the shared 
+resourse. That is, if a process is in a group by itself, it will access the shared
+resource regardless of the other nodes in the system.
+
+Assumption #2: All groups have a non-empty intersection.
+Similarly, to a violation of Assumption #1, if all groups do not have a non-zero 
+intersection then groups cannot exclusively access the share resource. That is, 
+if groups are disjoint, they will access the shared resource regardless of the 
+other groups in the system.
+
+Assumption #3: All groups are the same size.
+If this assumption is voilated, it is not catastrophic, but will only cause some
+inefficiencies in the number of messages passed between groups.
+
+Assumption #4: Each process is contained in the same number of voting sets.
+If this assumption is voilated, it is not catastrophic, but will only cause some
+inefficiencies in the number of messages passed between groups.
+
